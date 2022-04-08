@@ -1,0 +1,241 @@
+﻿<Window x:Class="WareHouse.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WareHouse.View"
+        mc:Ignorable="d"
+        Title="Система складского учёта" Height="450" Width="810">
+    <Grid>
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Margin="3">Показатели</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1.3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <GroupBox Grid.Row="0" Header="Исполненные заявки">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Viewbox Grid.Row="0" Grid.Column="0">
+                                        <TextBlock Text="{Binding CountDoneProcurement}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    </Viewbox>
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Купля" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="25"/>
+                                    <Viewbox Grid.Row="0" Grid.Column="1">
+                                        <TextBlock Text="{Binding CountDoneSale}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    </Viewbox>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="Продажа" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="25"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Grid.Row="1" Header="Ожидающие исполнения заявки">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Viewbox Grid.Row="0" Grid.Column="0">
+                                        <TextBlock Text="{Binding CountExpectationProcurement}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    </Viewbox>
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Купля" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="25"/>
+                                    <Viewbox Grid.Row="0" Grid.Column="1">
+                                        <TextBlock Text="{Binding CountExpectationSale}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    </Viewbox>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="Продажа" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="25"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Grid.Row="2" Header="Просроченные заявки">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Viewbox Grid.Row="0" Grid.Column="0">
+                                        <TextBlock Text="{Binding CountOverdueProcurement}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    </Viewbox>
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Купля" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="25"/>
+                                    <Viewbox Grid.Row="0" Grid.Column="1">
+                                        <TextBlock Text="{Binding CountOverdueSale}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    </Viewbox>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="Продажа" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="25"/>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                        <GroupBox Grid.Column="1" Header="Общее">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Viewbox Grid.Row="0">
+                                        <TextBlock Text="{Binding CountOrder}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    </Viewbox>
+                                    <TextBlock Grid.Row="1" Text="Всего заявок" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="25"/>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Viewbox Grid.Row="0">
+                                        <TextBlock Text="{Binding CountInventory}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    </Viewbox>
+                                    <TextBlock Grid.Row="1" Text="Позиций на складе" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="20"/>
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Viewbox Grid.Row="0">
+                                        <TextBlock Text="{Binding BalanceString}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                                    </Viewbox>
+                                    <TextBlock Grid.Row="1" Text="Баланс фирмы" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="25"/>
+                                </Grid>
+                            </Grid>
+                        </GroupBox>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="7*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="Resources/img.jpg" Stretch="UniformToFill" StretchDirection="Both" Margin="7"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0" Content="Сохранить" Margin="7" Click="saveButton_Click"/>
+                                <Button Grid.Column="1" Content="Загрузить" Margin="7" Click="loadButton_Click"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Margin="3">Закупки</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid Grid.Column="0" Margin="4" AutoGenerateColumns="False" ItemsSource="{Binding Procurement}" SelectedItem="{Binding SelectedPosition}" CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Штрихкод" Binding="{Binding BarCode}"/>
+                                <DataGridTextColumn Header="Дата исполнения" Binding="{Binding DateDueString}"/>
+                                <DataGridTextColumn Header="Организация" Binding="{Binding Organization}"/>
+                                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Количество, шт." Binding="{Binding Count}"/>
+                                <DataGridTextColumn Header="Цена, руб." Binding="{Binding CostString}"/>
+                                <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
+                                <DataGridTextColumn Header="Примечание" Binding="{Binding Note}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Grid.Column="1" Orientation="Vertical">
+                            <Button Content="Открыть позицию" Margin="4" Click="OpenProcurementButton_Click"/>
+                            <Button Content="Закрыть позицию" IsEnabled="{Binding CanCloseOrCancelProcurementPosition}" Margin="4" Click="CloseProcurementButton_Click"/>
+                            <Button Content="Отменить позицию" IsEnabled="{Binding CanCloseOrCancelProcurementPosition}" Margin="4" Click="CancelProcurementButton_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Margin="3">Продажи</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid Grid.Column="0" Margin="4" AutoGenerateColumns="False" ItemsSource="{Binding Sale}" SelectedItem="{Binding SelectedPosition}" CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Штрихкод" Binding="{Binding BarCode}"/>
+                                <DataGridTextColumn Header="Дата исполнения" Binding="{Binding DateDueString}"/>
+                                <DataGridTextColumn Header="Организация" Binding="{Binding Organization}"/>
+                                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+                                <DataGridTextColumn Header="Количество, шт." Binding="{Binding Count}"/>
+                                <DataGridTextColumn Header="Цена, руб." Binding="{Binding CostString}"/>
+                                <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
+                                <DataGridTextColumn Header="Примечание" Binding="{Binding Note}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Grid.Column="1" Orientation="Vertical">
+                            <Button Content="Открыть позицию" IsEnabled="{Binding CanOpenSalePosition}" Margin="4" Click="OpenSaleButton_Click"/>
+                            <Button Content="Закрыть позицию" IsEnabled="{Binding CanCloseOrCancelSalePosition}" Margin="4" Click="CloseSaleButton_Click"/>
+                            <Button Content="Отменить позицию" IsEnabled="{Binding CanCloseOrCancelSalePosition}" Margin="4" Click="CancelSaleButton_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Margin="3">Инвентарь</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <DataGrid Grid.Column="0" Margin="4" AutoGenerateColumns="False" ItemsSource="{Binding Inventory}" CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Штрихкод" Binding="{Binding BarCode}"/>
+                            <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Количество, шт." Binding="{Binding Count}"/>
+                            <DataGridTextColumn Header="Цена закупочная, руб" Binding="{Binding CostString}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Margin="3">Транзакции</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <DataGrid Grid.Column="0" Margin="4" AutoGenerateColumns="False" ItemsSource="{Binding Transaction}" CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Номер транзакции" Binding="{Binding TransactionNum}"/>
+                            <DataGridTextColumn Header="Штрихкод товара" Binding="{Binding BarCode}"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding DateString}"/>
+                            <DataGridTextColumn Header="Организация" Binding="{Binding Organization}"/>
+                            <DataGridTextColumn Header="Тип перевода" Binding="{Binding TransactionType}"/>
+                            <DataGridTextColumn Header="Сумма, руб." Binding="{Binding CostString}"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding Status}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,53 @@
+﻿<Window x:Class="WareHouse.View.SaleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WareHouse.View"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Продажа" Height="300" Width="280">
+    <Grid>
+        <Grid.CommandBindings>
+            <CommandBinding Command="New" CanExecute="OK_CanExecute" Executed="OK_Executed" />
+        </Grid.CommandBindings>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Дата исполнения:" VerticalAlignment="Center" Margin="10"/>
+            <DatePicker Grid.Row="0" Grid.Column="1" Margin="8" Validation.Error="ValidationError" SelectedDate="{Binding DateDue, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Организация:" VerticalAlignment="Center" Margin="10"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="8" Validation.Error="ValidationError" Text="{Binding Organization, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Наименование:" VerticalAlignment="Center" Margin="10"/>
+            <ComboBox Grid.Row="2" Grid.Column="1" Margin="8" Validation.Error="ValidationError" Text="{Binding Name, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Name="ComboBoxName"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Количество:" VerticalAlignment="Center" Margin="10"/>
+            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+                <TextBox Margin="8" Validation.Error="ValidationError" Text="{Binding Count, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Width="90"/>
+                <TextBlock Text="шт." VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Цена продажи:" VerticalAlignment="Center" Margin="10"/>
+            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+                <TextBox Margin="8" Validation.Error="ValidationError" Text="{Binding Cost, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Width="65"/>
+                <TextBlock Text="руб. шт." VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Примечание:" VerticalAlignment="Center" Margin="10"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Note}" Margin="8"/>
+        </Grid>
+        <Button Grid.Row="1" Content="ОК" Width="80" Height="20" Command="New"/>
+    </Grid>
+  
+</Window>

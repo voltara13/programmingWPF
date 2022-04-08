@@ -6,6 +6,6 @@
 При нескольких покупках одного и того же товара – цена в инвентаре склада усредняется как на бирже, что позволяет не рассчитывать цену товара, при котором можно «уйти в ноль».<p>
   
 [![](https://github.com/voltara13/programmingWPF/blob/master/1.png)](https://github.com/voltara13/programmingWPF/blob/master/1.png)
-[![](https://github.com/voltara13/programmingWPF/2.png)](https://github.com/voltara13/programmingWPF/2.png)
-[![](https://github.com/voltara13/programmingWPF/3.png)](https://github.com/voltara13/programmingWPF/3.png)
-[![](https://github.com/voltara13/programmingWPF/4.png)](https://github.com/voltara13/programmingWPF/4.png)
+[![](https://github.com/voltara13/programmingWPF/blob/master/2.png)](https://github.com/voltara13/programmingWPF/blob/master/2.png)
+[![](https://github.com/voltara13/programmingWPF/blob/master/3.png)](https://github.com/voltara13/programmingWPF/blob/master/3.png)
+[![](https://github.com/voltara13/programmingWPF/blob/master/4.png)](https://github.com/voltara13/programmingWPF/blob/master/4.png)

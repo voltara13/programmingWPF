@@ -5,7 +5,7 @@
 Взаимодействие с позициями осуществляется с помощью методов. Набор методов зависит от типа позиции (покупка, продажа, инвентарь, транзакция). Все эти наборы объединяет один большой класс. Сохранение и загрузка состояния склада происходит с помощью методов сериализации и десериализации соответственно. При покупке и продаже товаров происходят переводы денежных средств, также меняется и внутренний баланс склада. У каждого перевода есть свой уникальный номер. 
 При нескольких покупках одного и того же товара – цена в инвентаре склада усредняется как на бирже, что позволяет не рассчитывать цену товара, при котором можно «уйти в ноль».<p>
   
-[![](https://github.com/voltara13/programmingWPF/1.png)](https://github.com/voltara13/programmingWPF/1.png)
+[![](https://github.com/voltara13/programmingWPF/blob/master/1.png)](https://github.com/voltara13/programmingWPF/blob/master/1.png)
 [![](https://github.com/voltara13/programmingWPF/2.png)](https://github.com/voltara13/programmingWPF/2.png)
 [![](https://github.com/voltara13/programmingWPF/3.png)](https://github.com/voltara13/programmingWPF/3.png)
 [![](https://github.com/voltara13/programmingWPF/4.png)](https://github.com/voltara13/programmingWPF/4.png)
